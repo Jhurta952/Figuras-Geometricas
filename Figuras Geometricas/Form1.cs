@@ -19,6 +19,10 @@ namespace Figuras_Geometricas
             nudTamaño.Minimum = 0;
             nudX2nudY2.Minimum = 0;
 
+            nudTamaño.Maximum = decimal.MaxValue;
+            nudXnudY.Maximum = decimal.MaxValue;
+            nudX2nudY2.Maximum = decimal.MaxValue;
+
             nudX2nudY2.Enabled = false;
 
             txtContador.Text = "0";

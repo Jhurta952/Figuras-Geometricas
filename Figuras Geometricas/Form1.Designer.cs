@@ -48,7 +48,7 @@
             // cmbFigura
             // 
             cmbFigura.FormattingEnabled = true;
-            cmbFigura.Items.AddRange(new object[] { "Rectangulo", "Circulo" });
+            cmbFigura.Items.AddRange(new object[] { "Rectangulo", "Circulo", "Triangulo", "Linea" });
             cmbFigura.Location = new Point(70, 58);
             cmbFigura.Name = "cmbFigura";
             cmbFigura.Size = new Size(151, 28);
