@@ -11,16 +11,16 @@ namespace Figuras_Geometricas.Entidades
     public abstract class Figura
     {
         public Color Color { get; set; }
-        public int x { get; set; }
-        public int y { get; set; }
-        public int tamano { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int Tamaño { get; set; }
 
-        protected Figura(Color color, int x, int y, int tamano)
+        protected Figura(Color color, int x, int y, int tamaño)
         {
             Color = color;
-            this.x = x;
-            this.y = y;
-            this.tamano = tamano;
+            X = x;
+            Y = y;
+            Tamaño = tamaño;
         }
 
         public abstract void Dibujar(Graphics g);
