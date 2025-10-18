@@ -32,7 +32,8 @@ namespace Figuras_Geometricas
 
         private void cmbFigura_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            nudTamaño.Enabled = true;
+            nudX2nudY2.Enabled = false;
         }
 
     }
