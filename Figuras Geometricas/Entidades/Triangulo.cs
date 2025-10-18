@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace Figuras_Geometricas.Entidades
 {
-    internal class Triangulo : Figura
+    public class Triangulo : Figura
     {
         public Triangulo(Color color, int x, int y, int tamaño) : base(color, x, y, tamaño) { }
 
