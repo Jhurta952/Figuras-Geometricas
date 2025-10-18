@@ -16,7 +16,7 @@ namespace Figuras_Geometricas
             InitializeComponent();
 
             nudX2nudY2.Minimum = 0;
-            nudTamaño.Minimum = 1;
+            nudTamaño.Minimum = 0;
             nudX2nudY2.Minimum = 0;
 
             nudX2nudY2.Enabled = false;
