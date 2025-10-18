@@ -133,6 +133,7 @@
             Controls.Add(cmbFigura);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)nudXnudY).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudTamaño).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudX2nudY2).EndInit();
