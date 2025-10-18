@@ -66,6 +66,8 @@ namespace Figuras_Geometricas
             int x = (int)nudXnudY.Value;
             int y = (int)nudXnudY.Value;
             int tamaño = (int)nudTamaño.Value;
+            int x2 = (int)nudX2nudY2.Value;
+            int y2 = (int)nudX2nudY2.Value;
 
             if (pbColor.BackColor == Color.Transparent)
             {
@@ -73,33 +75,49 @@ namespace Figuras_Geometricas
                 return;
             }
 
-            if (tipo == "Rectangulo" || tipo == "Circulo")
+            Figura f = null;
+
+            switch (tipo)
             {
-                if (tamaño <= 0)
-                {
-                    MessageBox.Show("El tamaño debe ser mayor que cero.");
-                    return;
-                }
+                case "Rectangulo":
+                case "Circulo":
+                case "Triangulo":
+                    if (tamaño <= 0)
+                    {
+                        MessageBox.Show("El tamaño debe ser mayor que cero.");
+                        return;
+                    }
+                    if (x < 0 || y < 0 || x + tamaño > pbLienzo.Width || y + tamaño > pbLienzo.Height)
+                    {
+                        MessageBox.Show("La figura no cabe en el lienzo con las dimensiones dadas.");
+                        return;
+                    }
+                    f = FiguraFactory.CrearFigura(tipo, pbColor.BackColor, x, y, tamaño);
+                    break;
 
-                if (x < 0 || y < 0 || x + tamaño > pbLienzo.Width || y + tamaño > pbLienzo.Height)
-                {
-                    MessageBox.Show("La figura no cabe en el lienzo con las dimensiones dadas.");
-                    return;
-                }
+                case "Linea":
+                    if (x < 0 || y < 0 || x > pbLienzo.Width || y > pbLienzo.Height ||
+                        x2 < 0 || y2 < 0 || x2 > pbLienzo.Width || y2 > pbLienzo.Height)
+                    {
+                        MessageBox.Show("Los puntos de la línea deben estar dentro del lienzo.");
+                        return;
+                    }
+                    f = FiguraFactory.CrearFigura(tipo, pbColor.BackColor, x, y, x2, y2);
+                    break;
 
-                Figura f = FiguraFactory.CrearFigura(tipo, pbColor.BackColor, x, y, tamaño);
-                if (f != null)
-                {
-                    figuras.Add(f);
-                    f.Dibujar(pbLienzo.CreateGraphics());
-                    txtContador.Text = figuras.Count.ToString();
-                }
+                default:
+                    MessageBox.Show("Seleccione un tipo de figura válido.");
+                    return;
             }
-            else
+
+            if (f != null)
             {
-                MessageBox.Show("Seleccione un tipo de figura válido Rectangulo o Circulo.");
+                figuras.Add(f);
+                f.Dibujar(pbLienzo.CreateGraphics());
+                txtContador.Text = figuras.Count.ToString();
             }
         }
+
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
