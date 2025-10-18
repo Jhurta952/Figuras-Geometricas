@@ -16,7 +16,7 @@ Interfaz y Controles
 
 | **Control**         | **Nombre en el formulario** | **Descripción**                                                             |
 | ------------------- | --------------------------- | --------------------------------------------------------------------------- |
-| Cuadro combinado    | `cmbFigura`                 | Selecciona el tipo de figura (Rectángulo Círculo, Rectabgulo o Linea).      |
+| Cuadro combinado    | `cmbFigura`                 | Selecciona el tipo de figura (Rectángulo Círculo, Triangulo o Linea).      |
 | NuméricoArribaAbajo | `nudXnY`                    | Coordenadas iniciales de la figura (posición inicial en X y Y).             |
 | NuméricoArribaAbajo | `nudX2nY2`                  | Coordenadas finales o punto opuesto de la figura (para ancho/alto).         |
 | NuméricoArribaAbajo | `nudTamaño`                 | Tamaño general de la figura (diámetro o lado, según el tipo).               |
