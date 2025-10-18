@@ -125,5 +125,7 @@ namespace Figuras_Geometricas
             pbLienzo.Refresh();
             txtContador.Text = "0";
         }
+
+        //Se termina la clase Form1
     }
 }
