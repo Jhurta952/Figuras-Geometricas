@@ -11,25 +11,6 @@ Cada figura es un objeto independiente con su propio color, posición y tamaño.
 El usuario puede seleccionar el tipo de figura, elegir un color, definir las coordenadas y visualizar el resultado en el lienzo.  
 También se incluye un **contador de figuras creadas** y un **botón de limpieza** que elimina todas las figuras y reinicia el contador.
 
----
-Interfaz y Controles
-
-| **Control**         | **Nombre en el formulario** | **Descripción**                                                             |
-| ------------------- | --------------------------- | --------------------------------------------------------------------------- |
-| Cuadro combinado    | `cmbFigura`                 | Selecciona el tipo de figura (Rectángulo o Círculo).                        |
-| NuméricoArribaAbajo | `nudXnY`                    | Coordenadas iniciales de la figura (posición inicial en X y Y).             |
-| NuméricoArribaAbajo | `nudX2nY2`                  | Coordenadas finales o punto opuesto de la figura (para ancho/alto).         |
-| NuméricoArribaAbajo | `nudTamaño`                 | Tamaño general de la figura (diámetro o lado, según el tipo).               |
-| Cuadro de imagen    | `pbColor`                   | Muestra el color actual; al hacer clic abre el `ColorDialog`.               |
-| Cuadro de imagen    | `pbLienzo`                  | Lienzo donde se dibujan las figuras generadas.                              |
-| Botón               | `btnCrear`                  | Crea y dibuja la figura seleccionada con las coordenadas y color indicados. |
-| Botón               | `btnLimpiar`                | Limpia el lienzo y reinicia el contador de figuras.                         |
-| Cuadro de texto     | `txtContador`               | Muestra la cantidad total de figuras creadas.                               |
-| Diálogo de colores  | `colorDialog1`              | Permite seleccionar el color de la figura.                                  |
-
-
----
-
 ## ⚙️ Reglas de Negocio Implementadas
 
 - ❌ No se usa `new` en el formulario para crear figuras.  
