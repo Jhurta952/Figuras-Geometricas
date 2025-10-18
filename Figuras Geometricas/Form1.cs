@@ -36,5 +36,12 @@ namespace Figuras_Geometricas
             nudX2nudY2.Enabled = false;
         }
 
+        private void pbColor_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pbColor.BackColor = colorDialog1.Color;
+            }
+        }
     }
 }

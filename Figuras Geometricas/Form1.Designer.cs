@@ -91,6 +91,7 @@
             pbColor.Size = new Size(400, 600);
             pbColor.TabIndex = 5;
             pbColor.TabStop = false;
+            pbColor.Click += pbColor_Click;
             // 
             // btnCrear
             // 
