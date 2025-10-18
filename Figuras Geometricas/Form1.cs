@@ -35,9 +35,22 @@ namespace Figuras_Geometricas
 
         private void cmbFigura_SelectedIndexChanged(object sender, EventArgs e)
         {
-            nudTamaño.Enabled = true;
-            nudX2nudY2.Enabled = false;
+            string tipo = cmbFigura.SelectedItem?.ToString();
+
+            if (tipo == "Linea")
+            {
+                nudTamaño.Enabled = false;
+                nudX2nudY2.Enabled = true;
+                nudXnudY.Enabled = true;
+            }
+            else 
+            {
+                nudTamaño.Enabled = true;
+                nudX2nudY2.Enabled = false;
+                nudXnudY.Enabled = true;
+            }
         }
+
 
         private void pbColor_Click(object sender, EventArgs e)
         {
