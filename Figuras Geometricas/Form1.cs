@@ -2,12 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using Figuras_Geometricas.Entidades; 
+using Figuras_Geometricas.Entidades;
+using Figuras_Geometricas.Factory;
 
 namespace Figuras_Geometricas
 {
     public partial class Form1 : Form
     {
+        private List<Figura> figuras = new List<Figura>();
+
         public Form1()
         {
             InitializeComponent();
@@ -43,5 +46,45 @@ namespace Figuras_Geometricas
                 pbColor.BackColor = colorDialog1.Color;
             }
         }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            string tipo = cmbFigura.SelectedItem?.ToString();
+            int x = (int)nudXnudY.Value;
+            int y = (int)nudXnudY.Value;
+            int tamaño = (int)nudTamaño.Value;
+
+            if (pbColor.BackColor == Color.Transparent)
+            {
+                MessageBox.Show("Seleccione un color para la figura.");
+                return;
+            }
+
+            if (tipo == "Rectangulo" || tipo == "Circulo")
+            {
+                if(tamaño <= 0)
+                {
+                    MessageBox.Show("El tamaño debe ser mayor que cero.");
+                    return;
+                }
+
+                if (x < 0 || y < 0 || x + tamaño > pbLienzo.Width || y + tamaño > pbLienzo.Height)
+                {
+                    MessageBox.Show("La figura no cabe en el lienzo con las dimensiones dadas.");
+                    return;
+                }
+
+                Figura f = FiguraFactory.CrearFigura(tipo, pbColor.BackColor, x, y, tamaño);
+                if (f != null)
+                {
+                    figuras.Add(f);
+                    f.Dibujar(pbLienzo.CreateGraphics());
+                    txtContador.Text = figuras.Count.ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un tipo de figura válido Rectangulo o Circulo.");
+            }
     }
 }
