@@ -28,7 +28,7 @@ Interfaz y Controles
 
 ---
 
-## ⚙️ Reglas de Negocio Implementadas
+## ⚙️ Reglas de Negocio Implementadas.
 
 - ❌ No se usa `new` en el formulario para crear figuras.  
   Todas se crean mediante `FiguraFactory`.
