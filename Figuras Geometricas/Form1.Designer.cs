@@ -96,6 +96,7 @@
             // 
             // btnCrear
             // 
+            btnCrear.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic);
             btnCrear.Location = new Point(12, 470);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(137, 52);
@@ -106,6 +107,7 @@
             // 
             // btnLimpiar
             // 
+            btnLimpiar.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic);
             btnLimpiar.Location = new Point(185, 470);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(137, 52);
