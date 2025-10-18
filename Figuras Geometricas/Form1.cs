@@ -62,7 +62,7 @@ namespace Figuras_Geometricas
 
             if (tipo == "Rectangulo" || tipo == "Circulo")
             {
-                if(tamaño <= 0)
+                if (tamaño <= 0)
                 {
                     MessageBox.Show("El tamaño debe ser mayor que cero.");
                     return;
@@ -86,5 +86,13 @@ namespace Figuras_Geometricas
             {
                 MessageBox.Show("Seleccione un tipo de figura válido Rectangulo o Circulo.");
             }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            figuras.Clear();
+            pbLienzo.Refresh();
+            txtContador.Text = "0";
+        }
     }
 }

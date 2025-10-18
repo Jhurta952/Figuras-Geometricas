@@ -111,6 +111,7 @@
             btnLimpiar.TabIndex = 7;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // txtContador
             // 
